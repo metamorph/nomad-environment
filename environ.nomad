@@ -9,6 +9,7 @@ job "environ" {
 
 			config {
 				jar_path = "local/environment-0.0.1-SNAPSHOT.jar"
+				jvm_options = ["-Dserver.port=${NOMAD_PORT_app}"]
 			}
 
 			service {
@@ -31,7 +32,7 @@ job "environ" {
 			}
 
 			artifact {
-				source = "./target/environment-0.0.1-SNAPSHOT.jar"
+				source = "https://github.com/metamorph/nomad-environment/releases/download/0.1/environment-0.0.1-SNAPSHOT.jar"
 			}
 
 		}
